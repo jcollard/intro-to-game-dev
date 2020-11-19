@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 cd -- "$(dirname "$BASH_SOURCE")"
 git add .
 echo "Creating a backup before updating just in case!"
