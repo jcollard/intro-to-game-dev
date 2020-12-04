@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
         this.transform.Rotate(0, 0, rotation * Time.deltaTime * 90);
 
         float thruster = Input.GetAxis("Thruster");
-        this.transform.Translate(Vector2.up * Time.deltaTime * thruster);
-        print(rotation);
+        // Move the ship forward when the thruster button is pressed
+        this.transform.Translate(Vector2.up * thruster * Time.deltaTime * 5);
 
     }
 }
