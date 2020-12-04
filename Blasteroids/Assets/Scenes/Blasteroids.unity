@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 270
-  thrusterSpeed: 8
+  thrusterSpeed: 100
   rigidBody: {fileID: 1650501982}
 --- !u!50 &1650501982
 Rigidbody2D:
