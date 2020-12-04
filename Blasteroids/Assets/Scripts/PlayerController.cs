@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 120;
     public float thrusterSpeed = 10;
 
+    // The ships rigid body so we can apply physical forces
+    public Rigidbody2D rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
         float thruster = Input.GetAxis("Thruster");
         // Move the ship forward when the thruster button is pressed
-        this.transform.Translate(Vector2.up * thruster * Time.deltaTime * thrusterSpeed);
+        //this.transform.Translate(Vector2.up * thruster * Time.deltaTime * thrusterSpeed);
+        rigidBody.AddForce(transform.up * thruster * Time.deltaTime * thrusterSpeed);
 
     }
 }
