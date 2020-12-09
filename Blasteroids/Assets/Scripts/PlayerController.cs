@@ -23,16 +23,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotateShip();
+        MoveShip();
+        Fire();
+    }
 
+    void RotateShip()
+    {
         float rotation = Input.GetAxis("Rotation");
         // Rotate the ship on the z-axis
         this.transform.Rotate(0, 0, rotation * Time.deltaTime * rotationSpeed);
+    }
 
+    void MoveShip()
+    {
         float thruster = Input.GetAxis("Thruster");
         // Move the ship forward when the thruster button is pressed
         //this.transform.Translate(Vector2.up * thruster * Time.deltaTime * thrusterSpeed);
         rigidBody.AddForce(transform.up * thruster * Time.deltaTime * thrusterSpeed);
+    }
 
+    void Fire()
+    {
         bool isFiring = Input.GetButtonDown("Fire");
         if (isFiring)
         {
@@ -45,6 +57,6 @@ public class PlayerController : MonoBehaviour
             newLaser.transform.Translate(Vector2.up * 1);
             newLaser.speed = 10;
         }
-
     }
+
 }
